@@ -1,0 +1,16 @@
+.top{padding:60rpx 0; text-align: center;}
+.top image{width: 136rpx; height: 152rpx;}
+
+.formbox{width: 86%; margin: 0 auto;}
+.input{display: flex; align-items: center; border-radius:16rpx; font-size: 24rpx; 
+background: #eeeeee; padding: 10rpx 30rpx;}
+.input image{width: 30rpx; height: 30rpx; margin-right: 10rpx;}
+.input input{width: 530rpx; height: 60rpx; line-height: 60rpx;}
+
+.text{display: flex; border-radius:16rpx; font-size: 24rpx; 
+background: #eeeeee; padding: 20rpx 30rpx; margin-top: 30rpx;}
+.text image{width: 30rpx; height: 30rpx; margin-right: 10rpx; margin-top: 6rpx;}
+.text textarea{width: 530rpx; height: 300rpx; line-height: 40rpx;}
+
+.btn{background: #17aff8; color: #fff; border: none; margin: 60rpx auto;}
+

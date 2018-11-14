@@ -1,0 +1,16 @@
+<view class="top">
+	<image src="/img/logo.png"></image>
+</view>
+<form bindsubmit="formSubmit">
+	<view class="formbox">
+		<view class=".input">
+			<image src="/img/icon-phone.png"></image>
+			<input type="text" name="Contact" placeholder="在此输入您的联系方式（电话或邮箱）"/>
+		</view>
+		<view class="text">
+			<image src="/img/icon-chat-black.png"></image>
+			<textarea placeholder="有什么想说的，尽管来吧..." name="Content" />
+		</view>
+		<button class="btn" formType="submit">提交</button>
+	</view>
+</form>

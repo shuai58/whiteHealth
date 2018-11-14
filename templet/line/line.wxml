@@ -1,0 +1,45 @@
+<template name="line">
+	<view class="statuevue">
+		<view wx:if="{{drawData.low!=null}}" class="bi">
+			<view class="item">
+				<view wx:if="{{drawData.value<drawData.low.maxvalue}}" style="left:{{drawData.leftval}}rpx" class="peobox">
+					<view class="xx"></view>
+				</view>
+			</view>
+			<view class="item">
+				<view wx:if="{{drawData.normal.minvalue<=drawData.value&&drawData.value<=drawData.normal.maxvalue}}" style="left:{{drawData.leftval}}rpx" class="peobox">
+					<view class="xx"></view>
+				</view>
+			</view>
+			<view class="item">
+				<view wx:if="{{drawData.height.minvalue<=drawData.value}}" style="left:{{drawData.leftval}}rpx" class="peobox">
+					<view class="xx"></view>
+				</view>
+			</view>
+		</view>
+		<view wx:if="{{drawData.low!=null}}" class="fanwei">
+			<view>偏低：{{drawData.low.minvalue}}-{{drawData.low.maxvalue}}</view>
+			<view>正常：{{drawData.normal.minvalue}}-{{drawData.normal.maxvalue}}</view>
+			<view>偏高：{{drawData.height.minvalue}}-{{drawData.height.maxvalue}}</view>
+		</view>
+		<view class="linebox">
+			<view class="bar">
+				<view class="left">
+					<view catchtap="selecttype" data-type="0" class="chi {{type==0?'active':''}}">天</view>
+					<view catchtap="selecttype" data-type="1" class="day {{type==1?'active':''}}}">次</view>
+				</view>
+				<view class="right">
+					<image src="/img/icon-line.png"></image>最近变化曲线</view>
+			</view>
+		</view>
+	</view>
+
+</template>
+<template name="control">
+	<view class="control">
+		<view class="body-view">
+			<slider activeColor="#eee" backgroundColor="#eee" value="{{svalue}}" block-size="20" block-color="#17aff8" bindchanging="changvalue" step="1" />
+		</view>
+	</view>
+	<view class="tishi">提示：左右拖动可查看更多历史数据</view>
+</template>

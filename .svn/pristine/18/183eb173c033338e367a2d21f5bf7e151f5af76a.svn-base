@@ -1,0 +1,20 @@
+.top{display: flex; justify-content: center; align-items: center; background: #f6f8f7; padding: 60rpx 0;}
+.top .center{width: 340rpx; text-align: center;}
+.top .side{width: 140rpx; text-align: center;}
+.top .side .value{font-size: 60rpx; font-weight: 500; color: #12adff;}
+.top .side .value.minactive{font-size: 30rpx;line-height: 76rpx;}
+.top .side .name{font-size: 28rpx; color: #666;}
+.top .center .img{width: 120rpx; height: 120rpx; border-radius:120rpx; margin-bottom: 10rpx;}
+.top .center .name{font-size: 32rpx; color: #333; line-height: 60rpx;}
+.top .center .p{font-size: 24rpx; color: #999;}
+
+.list .libox{display: flex; padding: 0 20rpx;}
+.list.td .libox .item{line-height: 60rpx; font-size: 30rpx; font-weight: 500; color: #333;}
+.list .libox .item{flex: 1; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; font-size: 30rpx; color: #666; padding: 20rpx 0;}
+.list .libox.bg{background: #f6f8f7;}
+.list .libox .head{width: 80rpx; height: 80rpx; border-radius:80rpx;}
+.list .libox .p{width: 100%; font-size:20rpx;}
+.list .libox .zanimg{width: 30rpx; height: 30rpx;}
+
+
+

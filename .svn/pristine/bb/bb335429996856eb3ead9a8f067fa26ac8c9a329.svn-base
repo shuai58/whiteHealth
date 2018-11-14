@@ -1,0 +1,342 @@
+<import src="./../../templet/line/line.wxml" />
+<view class="container">
+	<view class="head">
+		<image class="headbg" mode="widthFix" src="/img/head-bg.jpg"></image>
+		<view class="headimg circle">
+			<image src="{{userInfo.avatarUrl}}"></image>
+		</view>	
+		<view class="info">
+			<view class="infonum">
+				<view class="title">体重 (公斤)</view>
+				<view class="num">{{weightInfo.Weight==null?'':weightInfo.Weight}}</view>
+			</view>
+			<view class="circlebox">
+				<canvas class="score" style="width:96px; height:96px; background: none;" canvas-id="score"></canvas>
+		        <view class="centerWord">
+		        	<view class="centerbox">
+		        		<view class="title">测量分值 (分)</view>
+		        		<view class="num">{{weightInfo.CMI==null?'':weightInfo.CMI}}</view>
+		        	</view>
+		        </view>
+			</view>
+			<navigator url="/pages/rankinglist/rankinglist" class="infonum">
+				<view class="title">排行榜 (名)</view>
+				<view class="num">{{weightInfo.Rank==0?"未上榜":weightInfo.Rank}}</view>
+			</navigator>
+		</view>
+		<view class="data">
+			<image class="dataicon" src="/img/icon-date.png"></image>
+			今天 {{day}}
+		</view>
+		<view class="nav">
+			<view><image class="navicon" mode="widthFix" src="/img/icon-tab-health.png"></image></view>
+			<navigator url="/pages/manage/manage" open-type="switchTab">
+				<image class="navicon" mode="widthFix" src="/img/icon-tab-weight.png"></image>
+			</navigator>
+		</view>
+	</view> 
+	<view class="box">
+		<view class="personInfo">
+			<view class="infoitem">
+				<image class="itembg" src="/img/height-bg.png"></image>
+				<view class="content">
+					<view class="name">您的身高</view>
+					<view class="value">{{height}}cm</view>
+				</view>
+				<view wx:if="{{edhg!=1}}" class="edit" bindtap="editclick"><image src="/img/icon-edit.png"></image></view>
+			</view>
+			<view class="infoitem">
+				<image class="itembg" src="/img/age-bg.png"></image>
+				<view class="content">
+					<view class="name">您的年龄</view>
+					<view class="value">{{agenum}}</view>
+				</view>
+				<view class="edit" bindtap="editclick"><image src="/img/icon-edit.png"></image></view>
+			</view>
+			<view class="infoitem">
+				<image class="itembg" src="/img/sex-bg.png"></image>
+				<view class="content">
+					<view class="name">您的性别</view>
+					<view class="value" bindtap="editclick">{{sex==0?"男":"女"}}</view>
+				</view>
+				<view class="edit" bindtap="editclick"><image src="/img/icon-edit.png"></image></view>
+			</view>
+		</view>
+	</view>
+	
+	<view class="infolist">
+		<view class="list">
+			<view class="show" data-num="0" data-name="bmi" bindtap="showclick">
+				<view class="icon"><image src="/img/icon-bmi.png"></image></view>
+				<view class="name">BMI</view>
+				<view class="value">{{weightInfo.BMI}}</view>
+				<view class="state">
+					<image src="/img/flag-1.png"></image>
+					<view>{{weightInfo.BMILevel}}</view>
+				</view>
+				<view class="more"><image src="/img/icon-arrow-right.png"></image></view>
+			</view>
+			<view class="hidden {{ishidden[0]==1?'show1':''}}">
+				身体质量指数，是用体重公斤数除以身高米数平方得出的数字，是目前国际上常用的衡量人体胖瘦程度以及是否健康的一个标准。
+			</view>	
+			<view class="box2" wx:if="{{ishidden[0]==1}}">
+				<template is="line" data="{{type,drawData}}"/>	
+				<view class="line">
+					<canvas canvas-id="bmi" disable-scroll="true" style="width: {{canvasWidth}}px; left:{{left}}px" class="canvas"></canvas>
+					<cover-view class="xline"></cover-view>
+				</view>
+				<template is="control" data="{{svalue}}"/>	
+			</view>
+		</view>
+		<view wx:if="{{weightInfo.Type>=2}}" class="list" data-num="1" data-name="fat_r" bindtap="showclick">
+			<view class="show">
+				<view class="icon"><image src="/img/icon-zfl.png"></image></view>
+				<view class="name">脂肪率</view>
+				<view class="value">{{weightInfo.fat_r}}%</view>
+				<view class="state">
+					<image src="/img/flag-1.png"></image>
+					<view>{{weightInfo.fat_rLevel}}</view>
+				</view>
+				<view class="more"><image src="/img/icon-arrow-right.png"></image></view>
+			</view>
+			<view class="hidden {{ishidden[1]==1?'show1':''}}">
+				根据人体肌肉总量和人体体重、身高等相结合得到的人体的一个比例值，这个值的范围决定一个人的身体健康状况以及力量的多少。
+			</view>	
+			<view class="box2" wx:if="{{ishidden[1]==1}}">
+				<template is="line" data="{{type,drawData}}"/>
+				<view class="line">
+					<canvas canvas-id="fat_r" disable-scroll="true" style="width: {{canvasWidth}}px; left:{{left}}px" class="canvas"></canvas>
+					<cover-view class="xline"></cover-view>
+				</view>
+				<template is="control" data="{{svalue}}"/>	
+			</view>
+		</view>
+		<view wx:if="{{weightInfo.Type>=2}}" class="list" data-num="2" data-name="muscle" bindtap="showclick">
+			<view class="show">
+				<view class="icon"><image src="/img/icon-jrl.png"></image></view>
+				<view class="name">肌肉率</view>
+				<view class="value">{{weightInfo.muscle}}%</view>
+				<view class="state">
+					<image src="/img/flag-1.png"></image>
+					<view>{{weightInfo.muscleLevel}}</view>
+				</view>
+				<view class="more"><image src="/img/icon-arrow-right.png"></image></view>
+			</view>
+			<view class="hidden {{ishidden[2]==1?'show1':''}}">
+				根据人体肌肉总量和人体体重、身高等相结合得到的人体的一个比例值，这个值的范围决定一个人的身体健康状况以及力量的多少。
+			</view>	
+			<view class="box2" wx:if="{{ishidden[2]==1}}">
+				<template is="line" data="{{type,drawData}}"/>
+				<view class="line">
+					<canvas canvas-id="muscle" disable-scroll="true" style="width: {{canvasWidth}}px; left:{{left}}px" class="canvas"></canvas>
+					<cover-view class="xline"></cover-view>
+				</view>
+				<template is="control" data="{{svalue}}"/>	
+			</view>
+		</view>
+		<view wx:if="{{weightInfo.Type>=2}}" class="list" data-num="3" data-name="fat_w" bindtap="showclick">
+			<view class="show">
+				<view class="icon"><image src="/img/icon-zfzl.png"></image></view>
+				<view class="name">脂肪重量</view>
+				<view class="value">{{weightInfo.fat_w}}kg</view>
+				<view class="state">
+					<image src="/img/flag-1.png"></image>
+					<view>{{weightInfo.fat_wLevel}}</view>
+				</view>
+				<view class="more"><image src="/img/icon-arrow-right.png"></image></view>
+			</view>
+			<view class="hidden {{ishidden[3]==1?'show1':''}}">
+				人体脂肪的重量
+			</view>	
+			<view class="box2" wx:if="{{ishidden[3]==1}}">
+				<template is="line" data="{{type,drawData}}"/>
+				<view class="line">
+					<canvas canvas-id="fat_w" disable-scroll="true" style="width: {{canvasWidth}}px; left:{{left}}px" class="canvas"></canvas>
+					<cover-view class="xline"></cover-view>
+				</view>
+				<template is="control" data="{{svalue}}"/>	
+			</view>
+		</view>
+		<view wx:if="{{weightInfo.Type>=2}}" class="list" data-num="4" data-name="bone" bindtap="showclick">
+			<view class="show">
+				<view class="icon"><image src="/img/icon-gz.png"></image></view>
+				<view class="name">骨重</view>
+				<view class="value">{{weightInfo.bone}}kg</view>
+				<view class="state">
+					<image src="/img/flag-1.png"></image>
+					<view>{{weightInfo.boneLevel}}</view>
+				</view>
+				<view class="more"><image src="/img/icon-arrow-right.png"></image></view>
+			</view>
+			<view class="hidden {{ishidden[4]==1?'show1':''}}">
+				单位体积内，骨组织、骨矿物质（钙、磷等）和骨基质（骨胶原、蛋白质、无机盐等等）]含量，骨量代表它们骨骼健康的情况。
+			</view>	
+			<view class="box2" wx:if="{{ishidden[4]==1}}">
+				<template is="line" data="{{type,drawData}}"/>
+				<view class="line">
+					<canvas canvas-id="bone" disable-scroll="true" style="width: {{canvasWidth}}px; left:{{left}}px" class="canvas"></canvas>
+					<cover-view class="xline"></cover-view>
+				</view>
+				<template is="control" data="{{svalue}}"/>	
+			</view>
+		</view>
+		<view wx:if="{{weightInfo.Type>=2}}" class="list" data-num="5" data-name="kcal" bindtap="showclick">
+			<view class="show">
+				<view class="icon"><image src="/img/icon-jcdx.png"></image></view>
+				<view class="name">基础代谢</view>
+				<view class="value">{{weightInfo.kcal}}kcal</view>
+				<view class="state">
+					<image src="/img/flag-1.png"></image>
+					<view>{{weightInfo.kcalLevel}}</view>
+				</view>
+				<view class="more"><image src="/img/icon-arrow-right.png"></image></view>
+			</view>
+			<view class="hidden {{ishidden[5]==1?'show1':''}}">
+				指人体在清醒而又极端安静的状态下，不受肌肉活动、环境温度、食物及精神紧张等影响时的能量代谢率。
+			</view>	
+			<view class="box2" wx:if="{{ishidden[5]==1}}">
+				<template is="line" data="{{type,drawData}}"/>
+				<view class="line">
+					<canvas canvas-id="kcal" disable-scroll="true" style="width: {{canvasWidth}}px; left:{{left}}px" class="canvas"></canvas>
+					<cover-view class="xline"></cover-view>
+				</view>
+				<template is="control" data="{{svalue}}"/>	
+			</view>
+		</view>
+		<view wx:if="{{weightInfo.Type>=2}}" class="list" data-num="6" data-name="water" bindtap="showclick">
+			<view class="show">
+				<view class="icon"><image src="/img/icon-sf.png"></image></view>
+				<view class="name">水分</view>
+				<view class="value">{{weightInfo.water}}%</view>
+				<view class="state">
+					<image src="/img/flag-1.png"></image>
+					<view>{{weightInfo.waterLevel}}</view>
+				</view>
+				<view class="more"><image src="/img/icon-arrow-right.png"></image></view>
+			</view>
+			<view class="hidden {{ishidden[6]==1?'show1':''}}">
+				指人体内水分比例。
+			</view>	
+			<view class="box2" wx:if="{{ishidden[6]==1}}">
+				<template is="line" data="{{type,drawData}}"/>
+				<view class="line">
+					<canvas canvas-id="water" disable-scroll="true" style="width: {{canvasWidth}}px; left:{{left}}px" class="canvas"></canvas>
+					<cover-view class="xline"></cover-view>
+				</view>
+				<template is="control" data="{{svalue}}"/>	
+			</view>
+		</view>
+		<view wx:if="{{weightInfo.Type>=2}}" class="list" data-num="7" data-name="visceral" bindtap="showclick">
+			<view class="show">
+				<view class="icon"><image src="/img/icon-nz.png"></image></view>
+				<view class="name">內脂</view>
+				<view class="value">{{weightInfo.visceral}}</view>
+				<view class="state">
+					<image src="/img/flag-1.png"></image>
+					<view>{{weightInfo.visceralLevel}}</view>
+				</view>
+				<view class="more"><image src="/img/icon-arrow-right.png"></image></view>
+			</view>
+			<view class="hidden {{ishidden[7]==1?'show1':''}}">
+				内脏脂肪含量
+			</view>	
+			<view class="box2" wx:if="{{ishidden[7]==1}}">
+				<template is="line" data="{{type,drawData}}"/>
+				<view class="line">
+					<canvas canvas-id="visceral" disable-scroll="true" style="width: {{canvasWidth}}px; left:{{left}}px" class="canvas"></canvas>
+					<cover-view class="xline"></cover-view>
+				</view>
+				<template is="control" data="{{svalue}}"/>	
+			</view>
+		</view>
+		<view wx:if="{{weightInfo.Type>=2}}" class="list" data-num="8" data-name="protein" bindtap="showclick">
+			<view class="show">
+				<view class="icon"><image src="/img/icon-dbz.png"></image></view>
+				<view class="name">蛋白质</view>
+				<view class="value">{{weightInfo.protein}}kda</view>
+				<view class="state">
+					<image src="/img/flag-1.png"></image>
+					<view>{{weightInfo.proteinLevel}}</view>
+				</view>
+				<view class="more"><image src="/img/icon-arrow-right.png"></image></view>
+			</view>
+			<view class="hidden {{ishidden[8]==1?'show1':''}}">
+				人体内蛋白质比例含量。
+			</view>	
+			<view class="box2" wx:if="{{ishidden[8]==1}}">
+				<template is="line" data="{{type,drawData}}"/>
+				<view class="line">
+					<canvas canvas-id="protein" disable-scroll="true" style="width: {{canvasWidth}}px; left:{{left}}px" class="canvas"></canvas>
+					<cover-view class="xline"></cover-view>
+				</view>
+				<template is="control" data="{{svalue}}"/>	
+			</view>
+		</view>
+		<view wx:if="{{weightInfo.Type>=2}}" class="list" data-num="9" data-name="bodyage" bindtap="showclick">
+			<view class="show">
+				<view class="icon"><image src="/img/icon-tl.png"></image></view>
+				<view class="name">体龄</view>
+				<view class="value">{{weightInfo.bodyage}}</view>
+				<view class="state">
+					<image src="/img/flag-1.png"></image>
+					<view>{{weightInfo.bodyageLevel}}</view>
+				</view>
+				<view class="more"><image src="/img/icon-arrow-right.png"></image></view>
+			</view>
+			<view class="hidden {{ishidden[9]==1?'show1':''}}">
+				指人的身体年龄。
+			</view>	
+			<view class="box2" wx:if="{{ishidden[9]==1}}">
+				<template is="line" data="{{type,drawData}}"/>
+				<view class="line">
+					<canvas canvas-id="bodyage" disable-scroll="true" style="width: {{canvasWidth}}px; left:{{left}}px" class="canvas"></canvas>
+					<cover-view class="xline"></cover-view>
+				</view>
+				<template is="control" data="{{svalue}}"/>	
+			</view>
+		</view>
+		<view class="introction">
+			<image src="/img/icon-warn.png"></image>
+			<text>此测量数据仅供参考，不可代替医学专业测试！</text>
+		</view>
+	</view>
+	<view class="box">
+		<view class="jibu">
+			<view class="title">
+				<text class="name">计步</text>
+				<view bindtap="jibu" class="navigator">管理<image src="/img/icon-right.png"></image></view>
+			</view>
+			<view class="jibubox" bindtap="jibu">
+				<image class="bgimg" src="/img/bg-pic1.png"></image>
+				<view wx:if="{{isshouquan==true}}" class="jibudetail">
+					<view class="detaili">
+						<view class="value">{{move.CurrentValue}}</view>
+						<view class="name">步</view>
+					</view>
+					<view class="detaili">
+						<view class="value">{{move.KcalValue}}</view>
+						<view class="name">卡</view>
+					</view>
+					<view class="detaili">
+						<canvas class="score" style="width:60px; height:60px; background: none;" canvas-id="jibu"></canvas>
+				        <view class="centerWord">
+				        	<view class="num">{{movebi>=100?'已完成':movebi+'%'}}</view>
+				        </view>
+					</view>
+				</view>
+				<view wx:else class="jibudetail">
+					<view style="font-size: 36rpx;">查看步数</view>
+				</view>
+			</view> 
+		</view>
+		<view class="bannerbox">
+			<swiper class="banner" indicator-dots="false" autoplay="true">
+				<swiper-item wx:for="{{banner}}" wx:key="key">
+					<image src="{{item.ImgUrl}}" mode="aspectFill"></image>
+				</swiper-item>
+			</swiper>
+		</view>
+	</view>
+</view>
+<import src="./../../templet/edit/edit.wxml" />
+<template is="edit" data="{{heightarr,hgindex,agearr,ageindex,isedit,sex,edhg}}"/>	

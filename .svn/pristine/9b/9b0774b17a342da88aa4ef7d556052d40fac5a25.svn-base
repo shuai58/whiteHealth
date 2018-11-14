@@ -1,0 +1,71 @@
+<view class="head-top">
+	<image class="headimg" src="{{userInfo.avatarUrl}}"></image>
+	<view class="name">{{userInfo.nickName}}</view>
+</view>
+<view class="list">
+	<view class="weui-cell">
+	    <view class="weui-cell__hd">
+	    	<image class="icon" src="/img/icon-man-s.png"></image>
+	    </view>
+	    <view class="weui-cell__bd">
+	        <view class="barname">昵称</view>
+	    </view>
+	    <view class="weui-cell__ft">{{userInfo.nickName}}</view>
+	</view>
+	<view class="weui-cell weui-cell_access" bindtap="editclick">
+	    <view class="weui-cell__hd">
+	    	<image class="icon" src="/img/ico-sex-s.png"></image>
+	    </view>
+	    <view class="weui-cell__bd">
+	        <view class="barname">性别</view>
+	    </view>
+	    <view class="weui-cell__ft">{{sex==0?"男":"女"}}</view>
+	</view>
+	<view class="weui-cell weui-cell_access" bindtap="editclick">
+	    <view class="weui-cell__hd">
+	    	<image class="icon" src="/img/icon-age-s.png"></image>
+	    </view>
+	    <view class="weui-cell__bd">
+	        <view class="barname">年龄</view>
+	    </view>
+	    <view class="weui-cell__ft">{{agenum}}</view>
+	</view>
+	<view class="weui-cell">
+	    <view class="weui-cell__hd">
+	    	<image class="icon" src="/img/icon-weight-s.png"></image>
+	    </view>
+	    <view class="weui-cell__bd">
+	        <view class="barname">体重</view>
+	    </view>
+	    <view class="weui-cell__ft">{{weight.Weight}}kg</view>
+	</view>
+	<view class="weui-cell {{edhg==1?'':'weui-cell_access'}}" data-edhg="1" bindtap="editclick">
+	    <view class="weui-cell__hd">
+	    	<image class="icon" src="/img/icon-height-s.png"></image>
+	    </view>
+	    <view class="weui-cell__bd">
+	        <view class="barname">身高</view>
+	    </view>
+	    <view class="weui-cell__ft">{{height}}cm</view>
+	</view>
+	<view class="weui-cell weui-cell_access" bindtap="tishi">
+	    <view class="weui-cell__hd">
+	    	<image class="icon" src="/img/icon-pos-s.png"></image>
+	    </view>
+	    <view class="weui-cell__bd">
+	        <view class="barname">附近的秤</view>
+	    </view>
+	    <view class="weui-cell__ft"></view>
+	</view>
+	<view class="weui-cell weui-cell_access">
+	    <view class="weui-cell__hd">
+	    	<image class="icon" src="/img/icon-mail-s.png"></image>
+	    </view>
+	    <view class="weui-cell__bd" bindtap="navclick">
+	        <view class="barname">意见反馈</view>
+	    </view>
+	    <view class="weui-cell__ft"></view>
+	</view>
+</view>
+<import src="./../../templet/edit/edit.wxml" />
+<template is="edit" data="{{heightarr,hgindex,agearr,ageindex,isedit,sex,edhg}}"/>	

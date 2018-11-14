@@ -1,0 +1,28 @@
+@import "./../../templet/target/target.wxss";
+.top{position: relative; height: 360rpx; color: #fff; overflow: hidden;}
+.topbg{position: absolute; left: 0; top: 0; width: 100%; z-index: 0;}
+.topbox{position: absolute; left: 0; top: 0; z-index: 99; width: 100%; height: 100%; overflow: hidden;
+display: flex; align-items: center; justify-content: center;}
+.topbox .center{display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
+ width: 240rpx; height: 240rpx; border: 6rpx solid #fff; border-radius: 750rpx; text-align: center;}
+.topbox .side{width:220rpx; padding: 0 10rpx; text-align: center;}
+.topbox .side .name{font-size: 30rpx; color: #eef8f9;}
+.topbox .side .value{display: flex; align-items: center; justify-content: center; font-size: 40rpx; font-weight: 700;}
+.topbox .ctbox{height: 150rpx;}
+.topbox .center .p{width: 100%; font-size: 28rpx; color: #eef8f9;}
+.topbox .center .value{width: 100%; font-size: 50rpx; font-weight: 700; line-height: 60rpx;}
+
+.select{ display: flex; justify-content: flex-end; padding: 30rpx;}
+.select .selbtn{ display: flex; width: 98rpx; height: 48rpx; font-size: 22rpx; background: #19affc; border: 1rpx solid #19affc; border-radius: 50rpx;}
+.select .selbtn view{width: 48rpx; height: 48rpx; color: #fff; text-align: center; line-height: 48rpx; border-radius: 50rpx;}
+.select .selbtn .active{ background: #fff; color: #19affc;}
+.canvas {
+    width: 100%;
+    height: 200px;
+}
+
+.navigator{display: block; width:280rpx; height: 60rpx; line-height: 60rpx; text-align: center;
+color: #19affc; font-size: 32rpx; border-radius:50rpx; margin:60rpx auto; border: 4rpx solid #19affc;}
+
+.edit{padding: 20rpx;}
+.edit image{width: 26rpx; height: 26rpx;}

@@ -1,0 +1,21 @@
+.head{position: relative; color: #fff; width: 100%; overflow: hidden;}
+.headbg{position: absolute; left: 0; top: 0; width: 100%; z-index: 0;}
+.headimg{position: absolute; left: 30rpx; top: 20rpx;  width: 70rpx; height: 70rpx; overflow: hidden;}
+.headimg image{width: 100%; height: 100%;}
+
+.info{position: relative; z-index: 1; display: flex; justify-content: center; align-items: center; padding-top: 70rpx;}
+.infonum{text-align: center; font-size: 32rpx;}
+.infonum .num{font-size: 40rpx; font-weight: 700; line-height: 70rpx;}
+.circlebox{position: relative;text-align: center; margin: 0 40rpx;}
+.circlebox .centerWord{position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; }
+.circlebox .centerWord .title{font-size: 10px; margin-top: 10px;}
+.circlebox .centerWord .num{font-size: 30px; font-weight: 700;}
+
+.data{position: relative; z-index: 1;display: flex; justify-content: center; align-items: center; padding: 30rpx 0;}
+.data .dataicon{width: 32rpx; height: 32rpx; margin-right: 10rpx;}
+.data text{margin: 0 10rpx;}
+
+.nav{position: relative; z-index: 1;display: flex; border-top:1rpx solid #5db8f4;}
+.nav view{width: 50%; padding: 30rpx 0; display: flex; justify-content: center; align-items: center;}
+.nav navigator{opacity: .8; width: 50%; padding: 30rpx 0; display: flex; justify-content: center; align-items: center;}
+.nav .navicon{width: 150rpx;}

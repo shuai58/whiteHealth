@@ -1,0 +1,13 @@
+.fixbox{position: fixed; left: 0; top: 0; z-index: 9999; width: 100%; height: 100%;
+display: flex; align-items: center; justify-content: center; }
+.fixbox .alertbox{width: 440rpx; padding:30rpx 40rpx; background: #fff; margin: 0 auto; border-radius:20rpx; box-shadow: 0 0 30rpx #999;}
+
+.fixbox .alertbox .title{text-align: center; font-size: 30rpx; color: #555;}
+.fixbox .alertbox .input{width: 60%; padding: 0 30rpx;  border-radius:20rpx; margin: 30rpx auto; border: 1rpx solid #ddd;}
+.fixbox .alertbox .input input{width: 100%; font-size: 28rpx; height: 70rpx; line-height: 70rpx;}
+.fixbox .alertbox .btn{display: flex; justify-content: space-between; width: 80%; margin: 0 auto;}
+
+.fixbox .btn text{display: block; width: 120rpx; height: 60rpx; border-radius:60rpx;
+ font-size: 24rpx; line-height: 60rpx; text-align: center;}
+.fixbox .btn text:first-child{background: #f5f5f5; color: #999;}
+.fixbox .btn text:last-child{background: #17aff8; color: #fff;}

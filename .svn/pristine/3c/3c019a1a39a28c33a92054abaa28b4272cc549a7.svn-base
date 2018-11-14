@@ -1,0 +1,12 @@
+<template name="target">
+	<view class="fixbox" hidden="{{isedit}}" catchtouchmove='true'>
+		<view class="alertbox">
+			<view class="title">请输入目标值</view>
+			<view class="input"><input bindinput="inputchange" type="number"/></view>
+			<view class="btn">
+				<text bindtap="closebtn">取消</text>
+				<text bindtap="confirmbtn">确定</text>
+			</view>
+		</view>
+	</view>
+</template>	

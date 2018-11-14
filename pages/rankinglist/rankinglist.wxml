@@ -1,0 +1,41 @@
+<view class="top">
+	<view class="side">
+		<view class="value {{weightInfo.Rank==0?'minactive':''}}">{{weightInfo.Rank==0?"未上榜":weightInfo.Rank}}</view>
+		<view class="name">排名</view>
+	</view>
+	<view class="center">
+		<image class="img" src="{{userInfo.avatarUrl}}"></image>
+		<view class="name">{{userInfo.nickName}}</view>
+		<!--<view class="p">本次PK打败了100人</view>-->
+	</view>
+	<view class="side">
+		<view class="value">{{weightInfo.CMI}}</view>
+		<view class="name">分数</view>
+	</view>
+</view> 
+<view class="list td">
+	<view class="libox">
+		<view class="item">排名</view>
+		<view class="item">头像</view>
+		<view class="item">姓名</view>
+		<view class="item">分值</view>
+		<!--<view class="item">点赞数</view>-->
+	</view>
+</view>
+<view wx:for="{{ranklist}}" wx:for-index="i" wx:key="key" class="list">
+	<view class="libox {{i%2==0?'bg':''}}">
+		<view class="item">{{item.ranksort}}</view>
+		<view class="item"><image class="head" src="{{item.headimg}}"></image></view>
+		<view class="item">{{item.nickname}}</view>
+		<view class="item">{{item.cmi}}</view>
+		<!--<view class="item">
+			<view class="zan">
+				<view class="p">{{122}}</view>
+				<image class="zanimg" src="/img/icon-heart-normal.png"></image>
+			</view>
+		</view>-->
+	</view>
+</view>
+ 
+ 
+ 

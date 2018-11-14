@@ -1,0 +1,78 @@
+@import "../../common/common.wxss";
+@import "./../../templet/edit/edit.wxss";
+.personInfo{display: flex; align-items: center;} 
+.personInfo .infoitem{width:32.75%; position: relative; height:120rpx;}
+.personInfo .infoitem .itembg{position:absolute; left: 0; top: 0; z-index: 0; width: 107%; height: 100%;}
+.personInfo .infoitem .content{position:absolute; left: 0; top: 0; z-index: 1; 
+width: 100%; height: 100%; padding: 20rpx 40rpx; color: #fff;}
+.personInfo .content .name{font-size: 20rpx; line-height: 40rpx;}
+.personInfo .content .value{font-size: 30rpx; font-weight: 700;}
+.personInfo .infoitem:first-child .content{padding: 20rpx 24rpx !important;}
+.personInfo .edit{position:absolute; right: 0rpx; bottom: -4rpx; z-index: 9; padding: 24rpx;}
+.personInfo .edit image{width: 26rpx; height: 26rpx;}
+
+.infolist{padding-bottom: 20rpx;}
+.infolist .show{display: flex; justify-content: space-between; align-items: center; width: 90%; padding: 20rpx 0; margin: 0 auto; border-top:1px dashed #000;}
+.infolist .list:first-child .show{border-top:none;}
+.infolist .list .icon{width: 80rpx; height: 80rpx;}
+.infolist .list .icon image{width: 80rpx; height: 80rpx;}
+.infolist .list .name{width: 120rpx; padding:0 25rpx; font-size: 30rpx; font-weight: 500;}
+.infolist .list .value{width: 180rpx; padding:0 25rpx; font-size: 34rpx; font-weight: 700;}
+.infolist .list .state{position: relative; width: 80rpx; height: 40rpx; overflow: hidden;}
+.infolist .list .state view{position: absolute;left: 0; top: 0; padding-left:10rpx; width: 100%;
+box-sizing: border-box; text-align: center; line-height: 40rpx; font-size: 22rpx; color: #fff;}
+.infolist .list .more{width: 30rpx; height: 30rpx; margin-left: 30rpx;}
+.infolist .list .hidden{display: none; padding: 10rpx 40rpx; box-sizing: border-box; color: #555; padding-bottom: 20rpx;}
+.infolist .list .hidden.show1{display: block;}
+
+.infolist .introction{display: flex; justify-content: center; align-items: center; padding-top: 20rpx; font-size: 26rpx; color: #666;}
+.infolist .introction image{width: 30rpx; height: 30rpx; margin-right: 10rpx;}
+
+.jibu .title{display: flex; justify-content: space-between; align-items: center; padding: 20rpx 30rpx;}
+.jibu .title .navigator{display: flex; align-items: center; font-size: 26rpx; color: #555;}
+.jibu .title .navigator image{width:10rpx; height: 24rpx; margin-left: 10rpx;}
+.jibu .title .name{font-size:34rpx; font-weight: 700;}
+.jibu .jibubox{position: relative; width: 100%; height: 92px; overflow: hidden; margin: 0 auto;}
+.jibu .jibubox .bgimg{position: absolute; left:0; top: 0; z-index: 0; width: 100%; height: 100%;}
+.jibu .jibubox .jibudetail{position: absolute; left:0; top: 0; z-index: 22; width: 100%; height: 100%;
+display: flex; align-items: center; color: #fff; text-align: center; justify-content: center;}
+.jibu .jibubox .jibudetail .detaili{position: relative; display: flex; align-items: center; flex-wrap: wrap;
+ width: 60px; height: 40px; padding: 0 60rpx;}
+.jibu .jibubox .jibudetail .detaili .value{width: 100%; font-size: 36rpx; font-weight: 600;}
+.jibu .jibubox .jibudetail .detaili .name{width: 100%; font-size: 30rpx;}
+
+.jibu .jibubox .jibudetail .detaili:last-child{height: 60px;}
+.jibu .jibubox .detaili .centerWord{position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;}
+.jibu .jibubox .detaili .centerWord .num{font-size:14px; }
+
+.bannerbox{width: 100%; height: 300rpx; border-radius:20rpx; overflow: hidden; margin: 0 auto; margin-top: 30rpx;}
+.banner {width: 100%; height: 300rpx;}
+
+.box2{margin-top: 10rpx;}
+.statuevue{padding: 0 20rpx;}
+.statuevue .bi{display: flex; justify-content: space-between; width: 96%; margin: 0 auto;}
+.statuevue .bi .item{position: relative; margin: 0 10rpx; flex: 1; height:20rpx; background: #c1c1c1; border-radius:20rpx ;}
+.statuevue .bi .peobox{position: absolute; top: -8rpx;}
+.statuevue .bi .peobox image{width: 80rpx; height: 140rpx; margin-left: -20rpx;}
+.statuevue .bi .peobox .xx{width: 16rpx; height: 36rpx; border-radius: 10rpx; background: #17aff8;}
+.statuevue .fanwei{display: flex; justify-content: space-between; width: 96%; margin: 20rpx auto;}
+.statuevue .fanwei view{ flex: 1; text-align: center; font-size: 22rpx; color: #999;}
+
+.linebox{ width: 94%; padding: 20rpx 0; margin: 0 auto; box-sizing: border-box;}
+.linebox .bar{display: flex; justify-content: space-between; padding:0 25rpx; border-bottom: 1rpx solid #ccc;}
+.linebox .bar .left {display: flex; align-items: flex-end;}
+.linebox .bar .left view{width:98rpx; height: 36rpx; line-height: 36rpx; margin: 0 2rpx; text-align: center; color: #fff;
+border-top-left-radius: 15rpx 15rpx; border-top-right-radius: 15rpx 15rpx; font-size: 22rpx;
+}
+.linebox .bar .left .chi{background: #17aff8;}
+.linebox .bar .left .day{background: #ffaf0e;}
+.linebox .bar .left .active{ height: 46rpx; line-height: 46rpx;}
+.linebox .bar .right{display: flex; align-items: center;}
+.linebox .bar .right image{width: 30rpx; height: 20rpx; margin-right: 10rpx;} 
+
+.line{position: relative; width: 100%; height:100px; margin: 0 auto; overflow: hidden;}
+.line .canvas{position: absolute; left: 0;}
+.line .xline{position: absolute; left: 2%; bottom: 26px; width: 96%; height: 1px; background: #000;} 
+.control{width: 600rpx; margin: 0 auto;}
+.tishi{text-align: center; color: #999; padding-bottom: 40rpx;}
+

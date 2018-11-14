@@ -1,0 +1,34 @@
+<view class="top">
+	<image class="topbg" mode="widthFix" src="/img/head-bg.jpg"></image>
+	<view class="topbox">
+		<view class="side">
+			<view class="name">我的目标</view>
+			<view class="value">{{myvalue}}<view class="edit" bindtap="editbtn"><image src="/img/icon-edit.png"></image></view></view>
+			 
+		</view>	
+		<view class="center">
+			<view class="ctbox">
+				<view class="p">今日步数</view>
+				<view class="value">{{todaymove.CurrentValue}}</view>
+				<view class="p">{{todaymove.KcalValue}}kal</view>
+			</view>
+		</view>
+		<navigator url="/pages/rankinglist/rankinglist" class="side">
+			 <view class="name">排行</view>
+			<view class="value">{{weightInfo.Rank==0?"未上榜":weightInfo.Rank}}</view>
+		</navigator>
+	</view>
+</view> 
+<view class="select">
+	<view class="selbtn">
+		<view class="{{type==0?'':'active'}}" bindtap="selecttype" data-type="0">周</view>
+		<view class="{{type==1?'':'active'}}" bindtap="selecttype" data-type="1">月</view>
+	</view>
+</view>
+<view class="container" hidden="{{isedit==true?false:true}}">
+    <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas>
+</view>
+<navigator url="/pages/rankinglist/rankinglist" class="navigator">排行榜 </navigator>
+
+<import src="./../../templet/target/target.wxml" />
+<template is="target" data="{{isedit}}"/>	

@@ -1,0 +1,51 @@
+{
+  "pages": [
+  	"pages/shouquan/shouquan",
+    "pages/index/index",
+    "pages/manage/manage",
+    "pages/recommend/recommend",
+    "pages/my/my",
+    "pages/feedback/feedback",
+    "pages/rankinglist/rankinglist",
+    "pages/movement/movement"   
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "小白健康管理",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#969593",
+    "selectedColor": "#17aff8",
+    "backgroundColor": "#fff",
+    "borderStyle": "#000",
+    "position": "bottom",
+    "list": [
+      {
+        "selectedIconPath": "img/icon-tab-health-hover.png",
+        "iconPath": "img/icon-tab-health-normal.png",
+        "pagePath": "pages/index/index",
+        "text": "健康"
+      },
+      {
+        "selectedIconPath": "img/icon-manager-hover.png",
+        "iconPath": "img/icon-manager-normal.png",
+        "pagePath": "pages/manage/manage",
+        "text": "管理"
+      },
+      {
+        "selectedIconPath": "img/icon-recommend-hover.png",
+        "iconPath": "img/icon-recommend-normal.png",
+        "pagePath": "pages/recommend/recommend",
+        "text": "推荐"
+      },
+      {
+        "selectedIconPath": "img/icon-tab-me-hover.png",
+        "iconPath": "img/icon-tab-me-normal.png",
+        "pagePath": "pages/my/my",
+        "text": "我的"
+      }
+    ]
+  }
+}

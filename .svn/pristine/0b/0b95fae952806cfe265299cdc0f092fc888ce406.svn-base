@@ -1,0 +1,117 @@
+<view class="container">
+	<view class="head">
+		<image class="headbg" mode="widthFix" src="/img/head-bg.jpg"></image>
+		<view class="headimg circle">
+			<image src="{{userInfo.avatarUrl}}"></image>
+		</view>	
+		<view class="info">
+			<view class="infonum">
+				<view class="title">体重 (公斤)</view>
+				<view class="num">{{weightInfo.Weight}}</view>
+			</view>
+			<view class="circlebox">
+				<canvas class="score" style="width:96px; height:96px; background: none;" canvas-id="score"></canvas>
+		        <view class="centerWord">
+		        	<view class="centerbox">
+		        		<view class="title">测量分值 (分)</view>
+		        		<view class="num">{{weightInfo.CMI}}</view>
+		        	</view>
+		        </view>
+			</view>
+			<navigator url="/pages/rankinglist/rankinglist" hover-class="navigator-hover" class="infonum">
+				<view class="title">排行榜 (名)</view>
+				<view class="num">{{weightInfo.Rank==0?"未上榜":weightInfo.Rank}}</view>
+			</navigator>
+		</view>
+		<view class="data">
+			<image class="dataicon" src="/img/icon-date.png"></image>
+			今天 {{day}}
+		</view>
+		<view class="nav">
+			<navigator url="/pages/index/index" open-type="switchTab">
+				<image class="navicon" mode="widthFix" src="/img/icon-tab-health.png"></image>
+			</navigator>
+			<view><image class="navicon" mode="widthFix" src="/img/icon-tab-weight.png"></image></view>
+		</view>
+	</view> 
+	<view class="box">
+		<view class="personInfo">
+			<view class="infoitem">
+				<image class="itembg" src="/img/age-bg-1.png"></image>
+				<view class="content">
+					<view class="name">目标体重</view>
+					<view class="value">{{myvalue}}kg</view>
+				</view>
+				<view class="edit" bindtap="editbtn"><image src="/img/icon-edit.png"></image></view>
+			</view>
+			<view class="infoitem">
+				<image class="itembg" src="/img/sex-bg-1.png"></image>
+				<view class="content">
+					<view class="name">距离目标还差</view>
+					<view class="value">{{myvalue==0?0:distag}}kg</view>
+				</view>
+			</view>
+		</view>	
+		<view class="norm">
+			<view class="title">您的-<text class="num">BMI {{weightInfo.BMI}}</text>{{weightInfo.BMILevel}}<text class="icon">？</text></view>
+			<view class="p">BIM：身体质量指数(BIM)是国际上常量的衡量人体</view>
+			<view class="p">胖瘦程度以及是否健康的一个标准</view>
+		</view>
+		<view class="statuevue">
+			<view class="bi">
+				<view class="item">
+					<view wx:if="{{weightInfo.BMI<18.5}}" style="left:{{leftvalue}}rpx" class="peobox">
+						<image src="/img/man.gif"></image>
+						<view class="xx"></view>
+					</view>
+				</view>
+				<view class="item">
+					<view wx:if="{{18.5<weightInfo.BMI&&weightInfo.BMI<24}}" style="left:{{leftvalue}}rpx" class="peobox">
+						<image src="/img/man.gif"></image>
+						<view class="xx"></view>
+					</view>
+				</view>
+				<view class="item">
+					<view wx:if="{{24<=weightInfo.BMI&&weightInfo.BMI<28}}" style="left:{{leftvalue}}rpx" class="peobox">
+						<image src="/img/man.gif"></image>
+						<view class="xx"></view>
+					</view>
+				</view>
+				<view class="item">
+					<view wx:if="{{weightInfo.BMI>28}}" style="left:{{leftvalue}}rpx" class="peobox">
+						<image src="/img/man.gif"></image>
+						<view class="xx"></view>
+					</view>
+				</view>
+			</view>
+			<view class="fanwei">
+				<view>偏瘦：﹤ 18.5</view>
+				<view>正常：18.5-24</view>
+				<view>偏胖：24-28</view>
+				<view>肥胖：﹥28</view>
+			</view>
+		</view>
+		<view class="linebox">
+			<view class="bar">
+				<view class="left">
+					<view bindtap="selecttype" data-type="0" class="chi {{type==0?'active':''}}">天</view>
+					<view bindtap="selecttype" data-type="1" class="day {{type==1?'active':''}}}">次</view>
+				</view>
+				<view class="right"><image src="/img/icon-line.png"></image>最近体重变化</view>
+			</view>
+		</view>
+	</view>
+	<view class="line">
+		<canvas canvas-id="lineCanvas" disable-scroll="true" style="width: {{canvasWidth}}px; left:{{left}}px" class="canvas"></canvas>
+		<cover-view class="xline"></cover-view>
+	</view>
+	<view class="control">
+	  <view class="body-view">
+	    <slider activeColor="#eee" backgroundColor="#eee" value="{{svalue}}" block-size="20" block-color="#17aff8" bindchanging="changvalue" step="1"/>
+	  </view>
+	</view>
+	<view class="tishi">提示：左右拖动可查看更多体重数据</view>
+</view>
+	
+<import src="./../../templet/target/target.wxml" />
+<template is="target" data="{{isedit}}"/>	

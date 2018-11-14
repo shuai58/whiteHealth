@@ -1,0 +1,10 @@
+<view class="group">
+	<image class="logo" mode="widthFix" src="/img/logo.png"></image>
+    <!--<icon type="warn" color="red" size="80"/>-->
+	<view wx:if="{{isshow==1}}" class="title">小白健康管理</view>
+	<view wx:if="{{isshow==1}}" class="p">由于小程序需要授权获取个人信息，请点击按钮同意授权登录</view>
+	<view wx:if="{{isshow==0}}" class="tit2">欢迎来到，小白健康！</view>
+</view>
+
+<button wx:if="{{isshow==1}}" class="btn" open-type="getUserInfo" bindgetuserinfo="getUserInfo">我要授权</button>
+ 
