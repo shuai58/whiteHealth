@@ -1,0 +1,11 @@
+.list .libox{display: flex; padding: 0 20rpx;}
+.td{position: fixed; left: 0; top:0; z-index: 999; width: 100%; background: #fff;}
+.list.td .libox .item{line-height: 60rpx; font-size: 30rpx; font-weight: 500; color: #333;}
+.list .libox .item{flex: 1;line-height: 70rpx; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; font-size: 28rpx; color: #666; padding: 20rpx 0;}
+.list .libox.bg{background: #f6f8f7;}
+.list .libox .head{width: 80rpx; height: 80rpx; border-radius:80rpx;}
+.list .libox .p{width: 100%; font-size:20rpx;}
+.list .libox .zanimg{width: 30rpx; height: 30rpx;}
+.paddingtop{padding-top: 110rpx; }
+.detail{display: inline-block; width: 80rpx; height: 40rpx; line-height: 40rpx; text-align: center;
+ background: #17aff8; color: #fff; font-size: 24rpx;}

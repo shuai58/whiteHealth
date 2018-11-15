@@ -1,0 +1,17 @@
+<view class="detail">
+	<view>测量地点：{{showdata.city==null?'未知':showdata.city}}{{showdata.address==null?'':showdata.address}}</view>
+	<view>测量时间：{{showdata.createtime}}</view>
+	<view>体重：{{showdata.weight}}</view>
+	<view>BMI：{{showdata.bmi}}</view>
+	<view>脂肪率：{{showdata.fat_r}}</view>
+	<view>肌肉率：{{showdata.muscle}}</view>
+	<view>脂肪重量：{{showdata.fat_w}}</view>
+	<view>骨重：{{showdata.bone}}</view>
+	<view>基础代谢：{{showdata.kcal}}</view>
+	<view>水分：{{showdata.water}}</view>
+	<view>内酯：{{showdata.visceral}}</view>
+	<view>蛋白质：{{showdata.protein}}</view>
+	<view>体龄：{{showdata.bodyage}}</view>
+</view>	
+	
+

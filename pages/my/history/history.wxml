@@ -1,0 +1,19 @@
+<view class="list td">
+	<view class="libox">
+		<view class="item">测量时间</view>
+		<view class="item">体重</view>
+		<view class="item">BIM</view>
+		<view class="item">分值</view>
+	</view>
+</view>
+<view class="paddingtop">
+	<view wx:for="{{historylist}}" wx:for-index="i" wx:key="key" class="list" data-set="{{item}}" bindtap="onDetailTap">
+		<view class="libox {{i%2==0?'bg':''}}">
+			<view class="item">{{item.createtime}}</view>
+			<view class="item">{{item.weight}}</view>
+			<view class="item">{{item.bmi}}</view>
+			<view class="item">{{item.cmi}}</view>
+		</view>
+	</view>
+</view>
+
