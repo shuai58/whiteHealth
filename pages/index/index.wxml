@@ -43,7 +43,7 @@
 					<view class="name">您的身高</view>
 					<view class="value">{{height}}cm</view>
 				</view>
-				<view wx:if="{{edhg!=1}}" class="edit" bindtap="editclick"><image src="/img/icon-edit.png"></image></view>
+				<view class="edit" bindtap="editclick"><image src="/img/icon-edit.png"></image></view> 
 			</view>
 			<view class="infoitem">
 				<image class="itembg" src="/img/age-bg.png"></image>

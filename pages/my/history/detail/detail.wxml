@@ -1,17 +1,107 @@
 <view class="detail">
-	<view>测量地点：{{showdata.city==null?'未知':showdata.city}}{{showdata.address==null?'':showdata.address}}</view>
-	<view>测量时间：{{showdata.createtime}}</view>
-	<view>体重：{{showdata.weight}}</view>
-	<view>BMI：{{showdata.bmi}}</view>
-	<view>脂肪率：{{showdata.fat_r}}</view>
-	<view>肌肉率：{{showdata.muscle}}</view>
-	<view>脂肪重量：{{showdata.fat_w}}</view>
-	<view>骨重：{{showdata.bone}}</view>
-	<view>基础代谢：{{showdata.kcal}}</view>
-	<view>水分：{{showdata.water}}</view>
-	<view>内酯：{{showdata.visceral}}</view>
-	<view>蛋白质：{{showdata.protein}}</view>
-	<view>体龄：{{showdata.bodyage}}</view>
+	<view class="cs">测量地点：{{showdata.city==null?'未知':showdata.city}}{{showdata.address==null?'':showdata.address}}</view>
+	<view class="cs">测量时间：{{showdata.createtime}}</view>
 </view>	
-	
+<view class="wxlist">
+	<view class="weui-cell">
+	    <view class="weui-cell__hd">
+	    	<image class="icon" src="/img/icon-tz.png"></image>
+	    </view>
+	    <view class="weui-cell__bd">
+	        <view class="barname">体重</view>
+	    </view>
+	    <view class="weui-cell__ft">{{showdata.weight}}</view>
+	</view>
+ 	<view class="weui-cell">
+	    <view class="weui-cell__hd">
+	    	<image class="icon" src="/img/icon-bmi.png"></image>
+	    </view>
+	    <view class="weui-cell__bd">
+	        <view class="barname">BMI</view>
+	    </view>
+	    <view class="weui-cell__ft">{{showdata.bmi}}</view>
+	</view>
+	<view class="weui-cell">
+	    <view class="weui-cell__hd">
+	    	<image class="icon" src="/img/icon-zfl.png"></image>
+	    </view>
+	    <view class="weui-cell__bd">
+	        <view class="barname">脂肪率</view>
+	    </view>
+	    <view class="weui-cell__ft">{{showdata.fat_r}}</view>
+	</view>
+	<view class="weui-cell">
+	    <view class="weui-cell__hd">
+	    	<image class="icon" src="/img/icon-jrl.png"></image>
+	    </view>
+	    <view class="weui-cell__bd">
+	        <view class="barname">肌肉率</view>
+	    </view>
+	    <view class="weui-cell__ft">{{showdata.muscle}}</view>
+	</view>
+	<view class="weui-cell">
+	    <view class="weui-cell__hd">
+	    	<image class="icon" src="/img/icon-zfzl.png"></image>
+	    </view>
+	    <view class="weui-cell__bd">
+	        <view class="barname">脂肪重量</view>
+	    </view>
+	    <view class="weui-cell__ft">{{showdata.fat_w}}</view>
+	</view>
+	<view class="weui-cell">
+	    <view class="weui-cell__hd">
+	    	<image class="icon" src="/img/icon-gz.png"></image>
+	    </view>
+	    <view class="weui-cell__bd">
+	        <view class="barname">骨重</view>
+	    </view>
+	    <view class="weui-cell__ft">{{showdata.bone}}</view>
+	</view>
+	<view class="weui-cell">
+	    <view class="weui-cell__hd">
+	    	<image class="icon" src="/img/icon-jcdx.png"></image>
+	    </view>
+	    <view class="weui-cell__bd">
+	        <view class="barname">基础代谢</view>
+	    </view>
+	    <view class="weui-cell__ft">{{showdata.kcal}}</view>
+	</view>
+	<view class="weui-cell">
+	    <view class="weui-cell__hd">
+	    	<image class="icon" src="/img/icon-sf.png"></image>
+	    </view>
+	    <view class="weui-cell__bd">
+	        <view class="barname">水分</view>
+	    </view>
+	    <view class="weui-cell__ft">{{showdata.water}}</view>
+	</view>
+	<view class="weui-cell">
+	    <view class="weui-cell__hd">
+	    	<image class="icon" src="/img/icon-nz.png"></image>
+	    </view>
+	    <view class="weui-cell__bd">
+	        <view class="barname">内酯</view>
+	    </view>
+	    <view class="weui-cell__ft">{{showdata.visceral}}</view>
+	</view>
+	<view class="weui-cell">
+	    <view class="weui-cell__hd">
+	    	<image class="icon" src="/img/icon-dbz.png"></image>
+	    </view>
+	    <view class="weui-cell__bd">
+	        <view class="barname">蛋白质</view>
+	    </view>
+	    <view class="weui-cell__ft">{{showdata.protein}}</view>
+	</view>
+	<view class="weui-cell">
+	    <view class="weui-cell__hd">
+	    	<image class="icon" src="/img/icon-tl.png"></image>
+	    </view>
+	    <view class="weui-cell__bd">
+	        <view class="barname">体龄</view>
+	    </view>
+	    <view class="weui-cell__ft">{{showdata.bodyage}}</view>
+	</view>
+</view>
+
 

@@ -6,55 +6,5 @@
 
 .kuai{background: #fff; margin-bottom: 16rpx;}
 
-.list{width: 96%; margin: 0rpx auto;}
-.list .weui-cell__ft{font-size: 30rpx;}
-.barname{color: #666; font-size: 30rpx;}
-.icon{width:32rpx; height: 32rpx; margin-right:20rpx; position: relative; top: 6rpx;}
-.weui-cell {
-    padding: 20rpx 30rpx;
-    position: relative;
-    display: flex;
-    align-items: center;
-}
- 
-.weui-cell_access .weui-cell__ft {
-    padding-right: 30rpx;
-    position: relative;
-}
-.weui-cell__bd {
-    flex: 1;
-} 
-.weui-cell__ft {
-    text-align: right;
-    color: #333;
-}
-.weui-cell_access .weui-cell__ft:after {
-    content: " ";
-    display: inline-block;
-    height: 6px;
-    width: 6px;
-    border-width: 2px 2px 0 0;
-    border-color: #e5e5e5;
-    border-style: solid;
-    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
-    position: absolute;
-    top: 50%;
-    margin-top: -4px;
-    right: 1rpx;
-}
-.weui-cell:before {
-    content: " ";
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    width: 95%;
-    height: 1px;
-    border-top: 1px solid #e5e5e5;
-    color: #e5e5e5;
-    transform-origin: 0 0;
-    transform: scaleY(0.5);
-    left: 20rpx;
-    z-index: 2;
-}
+
 

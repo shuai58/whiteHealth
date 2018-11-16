@@ -32,7 +32,7 @@ Page({
 		    }else if(28>stdata.BMI) {
 		    	leftval = (stdata.BMI*100-28*100)/(40*100-28*100)*138-8;
 		    } 
-		    var distag = (stdata.Weight-stdata.TargetWeight).toFixed(2);
+		    var distag = Math.abs((stdata.Weight-stdata.TargetWeight).toFixed(2));
 		    that.setData({
 					weightInfo:stdata,
 					myvalue:stdata.TargetWeight,
@@ -183,7 +183,8 @@ Page({
 					console.log(res.data)
 					if(res.data.code == 1) {
 						that.data.weightInfo.TargetWeight = inputvalue;
-						var distag =  (that.data.weightInfo.Weight-inputvalue).toFixed(2);
+						var distag = Math.abs((that.data.weightInfo.Weight-inputvalue).toFixed(2));
+						wx.setStorageSync('weightInfo', that.data.weightInfo);
 						that.setData({
 							myvalue:inputvalue,
 							distag:distag,

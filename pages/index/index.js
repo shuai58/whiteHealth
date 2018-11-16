@@ -66,9 +66,6 @@ Page({
 					canvasid: 'score',
 					height: 96
 				});
-				if(res.data.data.Type >= 2 && wx.getStorageSync('height') == '') {
-					that.editclick()
-				}
 				if (res.data.data.Type == 5) {
 					console.log("设备5")
 					wx.setStorageSync('height', parseInt(res.data.data.Height));
@@ -78,6 +75,9 @@ Page({
 						height: wx.getStorageSync('height') 
 					})
 				} 
+				if(res.data.data.Type >= 2 && wx.getStorageSync('sex') == '') {
+					that.editclick()
+				}
 				wx.setStorageSync('weightInfo', res.data.data);
 				if(res.data.data.Height != undefined) {
 					wx.setStorageSync('height', parseInt(res.data.data.Height));
@@ -359,13 +359,15 @@ Page({
 				eindex = i
 			}
 		}
+		if (lineData[eindex]==undefined) {
+			return
+		} 
 		that.setData({
 			drawData: lineData[eindex],
 			type:0,
 			left: 0,
 			svalue: 0
 		})
-		console.log(that.data.drawData)
 		that.drawline(lineData[eindex].name)
 	},
 	getLineData: function(callback) {
@@ -457,7 +459,12 @@ Page({
 				console.log(res.data.data)
 				var banner = res.data.data;
 				for(var i = 0; i < banner.length; i++) {
-					banner[i].ImgUrl = config.baseUrl + banner[i].ImgUrl;
+					if(banner[i].ImgUrl.indexOf("http")>=0)
+					{
+						console.log("包含http");
+					}else{
+						banner[i].ImgUrl = config.baseUrl + banner[i].ImgUrl;
+					}
 				}
 				that.setData({
 					banner: banner
@@ -467,7 +474,6 @@ Page({
 	},
 	drawline: function(canvasid) {
 		var that = this;
-		console.log(that.data.drawData)
 		if(that.data.type == 0) {
 			var categories = that.data.drawData.clinetime;
 			var series = that.data.drawData.clinevalue;
