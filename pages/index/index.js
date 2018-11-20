@@ -159,31 +159,39 @@ Page({
 	},
 	getrun: function() {
 		var that = this;
-		config.get(config.getHealthInfo, {
-			uniqid: app.globalData.uniqid,
-			weight: that.data.weightInfo.Weight,
-		}, function(res) {
-			if(res.data.code == 1) {
-				console.log(res.data.data)
-				var movedata = res.data.data;
-				wx.setStorageSync('moveinfo', res.data.data);
-				var movebi=0
-				if (movedata.TargetValue!=0) {
-					movebi = parseInt((movedata.CurrentValue / movedata.TargetValue) * 100)
-				} 
-				that.setData({
-					move: res.data.data,
-					movebi:movebi,
-					isshouquan: true
+		wx.getWeRunData({
+			success(res) {
+				console.log(res)
+			    config.post(config.getHealthInfo, {
+					uniqid: app.globalData.uniqid,
+					weight: that.data.weightInfo.Weight,
+					sessionid:app.globalData.sessionId,
+					encryptedData:res.encryptedData,
+					iv:res.iv
+				}, function(res) {
+					if(res.data.code == 1) {
+						console.log(res.data.data)
+						var movedata = res.data.data;
+						wx.setStorageSync('moveinfo', res.data.data);
+						var movebi=0
+						if (movedata.TargetValue!=0) {
+							movebi = parseInt((movedata.CurrentValue / movedata.TargetValue) * 100)
+						} 
+						that.setData({
+							move: res.data.data,
+							movebi:movebi,
+							isshouquan: true
+						})
+						pulic.drawCircle({
+							value: res.data.data.CurrentValue,
+							total: res.data.data.TargetValue,
+							canvasid: 'jibu',
+							height: 60
+						});
+					}
 				})
-				pulic.drawCircle({
-					value: res.data.data.CurrentValue,
-					total: res.data.data.TargetValue,
-					canvasid: 'jibu',
-					height: 60
-				});
-			}
-		})
+		  	} 
+		})	
 	},
 	gologin: function() {
 		var that = this;
@@ -210,7 +218,15 @@ Page({
 									console.log(res.data)
 									if(res.data.code == 1) {
 										app.globalData.uniqid = res.data.data.unionid;
-										that.getWeight();
+										config.get(config.getbaseinfo, {
+											uniqid: res.data.data.unionid
+										}, function(res) {
+											console.log(res.data.data)
+											if (res.data.data.type==5) {
+												wx.setStorageSync('height', parseInt(res.data.data.height));
+											} 
+											that.getWeight();
+										})
 										that.getAdd();
 										isrequest = 0;
 									}
@@ -377,7 +393,7 @@ Page({
 			age: wx.getStorageSync('age'),
 			sex: wx.getStorageSync('sex'),
 			pagesize: 1,
-			pagenum: 30
+			pagenum: 20
 		}, function(res) {
 			if(res.data.code == 1) {
 				console.log(res.data.data)
@@ -437,7 +453,7 @@ Page({
 							lineData[i].unit='';
 							break;
 						case "protein":
-							lineData[i].unit='kda';
+							lineData[i].unit='%';
 							break;
 						case "bodyage":
 							lineData[i].unit='岁';
@@ -446,6 +462,7 @@ Page({
 							break;
 					}
 				}
+				console.log(lineData)
 				callback()
 			}
 		})

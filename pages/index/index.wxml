@@ -253,7 +253,7 @@
 			<view class="show">
 				<view class="icon"><image src="/img/icon-dbz.png"></image></view>
 				<view class="name">蛋白质</view>
-				<view class="value">{{weightInfo.protein}}kda</view>
+				<view class="value">{{weightInfo.protein}}%</view>
 				<view class="state">
 					<image src="/img/flag-1.png"></image>
 					<view>{{weightInfo.proteinLevel}}</view>

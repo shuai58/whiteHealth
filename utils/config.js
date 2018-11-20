@@ -23,6 +23,7 @@ module.exports = {
     getNewsContent: baseUrl + '/api/news/GetNewsContent',//16.获取资讯内容
     GetMeasure: baseUrl + '/api/Health/GetMeasure',//17.获取每项测量值历史记录
     historylist: baseUrl + '/api/health/GetHisResultList',//18.获取历史测量记录
+    getbaseinfo: baseUrl + '/api/health/getbaseinfo',//19.获取称重类型
 }
 // GET 请求
 function requstGetData(url, param,callback) {

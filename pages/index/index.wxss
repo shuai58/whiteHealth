@@ -32,12 +32,12 @@ box-sizing: border-box; text-align: center; line-height: 40rpx; font-size: 22rpx
 .jibu .title .navigator{display: flex; align-items: center; font-size: 26rpx; color: #555;}
 .jibu .title .navigator image{width:10rpx; height: 24rpx; margin-left: 10rpx;}
 .jibu .title .name{font-size:34rpx; font-weight: 700;}
-.jibu .jibubox{position: relative; width: 100%; height: 92px; overflow: hidden; margin: 0 auto;}
+.jibu .jibubox{position: relative; width: 100%; height: 180rpx; overflow: hidden; margin: 0 auto;}
 .jibu .jibubox .bgimg{position: absolute; left:0; top: 0; z-index: 0; width: 100%; height: 100%;}
 .jibu .jibubox .jibudetail{position: absolute; left:0; top: 0; z-index: 22; width: 100%; height: 100%;
 display: flex; align-items: center; color: #fff; text-align: center; justify-content: center;}
 .jibu .jibubox .jibudetail .detaili{position: relative; display: flex; align-items: center; flex-wrap: wrap;
- width: 60px; height: 40px; padding: 0 60rpx;}
+/* width: 60px; height: 40px; */padding: 0 60rpx;}
 .jibu .jibubox .jibudetail .detaili .value{width: 100%; font-size: 36rpx; font-weight: 600;}
 .jibu .jibubox .jibudetail .detaili .name{width: 100%; font-size: 30rpx;}
 
