@@ -1,0 +1,28 @@
+<template name="edit">
+	<view class="fixbg" hidden="{{isedit}}" catchtouchmove='true'>
+		<view class="edit">
+			<view class="edform">
+				<view class="sex">
+					<image bindtap="selectsex" data-sex="0" src="{{sex==0&&sex!=''?'/img/icon-man-hover.png':'/img/icon-man-normal.png'}}"></image>
+					<image bindtap="selectsex" data-sex="1" src="{{sex==1?'/img/icon-woman-hover.png':'/img/icon-woman-normal.png'}}"></image>
+				</view>
+				<view class="ts">
+					<text wx:if="{{sex!=0&&sex!=1||sex==''}}">请点击头像选择性别</text>
+					<text wx:else>您的性别为{{sex==0?'男':'女'}}</text>
+				</view>
+			</view>
+			<view class="editem">  <!--wx:if="{{edhg!=1}}" -->
+				<view class="name">身高</view>
+				<picker bindchange="heightChange" value="{{hgindex}}" range="{{heightarr}}"><view class="value">{{heightarr[hgindex]}}</view></picker>
+				<image class="arrow" src="/img/icon-arrow-t.png"></image>
+			</view>
+			<view class="editem">
+				<view class="name">年龄</view>
+				<picker bindchange="ageChange" value="{{ageindex}}" range="{{agearr}}"><view class="value">{{agearr[ageindex]}}</view></picker>
+				<image class="arrow" src="/img/icon-arrow-t.png"></image>
+			</view>
+			<view class="p">请选择正确的资料方便我们给你更精确的报告</view>
+			<button class="btn" bindtap="closeedit">确定</button>
+		</view>
+	</view>
+</template>	

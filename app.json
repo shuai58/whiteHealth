@@ -9,7 +9,8 @@
     "pages/rankinglist/rankinglist",
     "pages/movement/movement",
     "pages/my/history/history",
-    "pages/my/history/detail/detail"
+    "pages/my/history/detail/detail",
+    "pages/add/add"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -49,5 +50,8 @@
         "text": "我的"
       }
     ]
-  }
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wx5c1835eeebee278f"
+  ]
 }

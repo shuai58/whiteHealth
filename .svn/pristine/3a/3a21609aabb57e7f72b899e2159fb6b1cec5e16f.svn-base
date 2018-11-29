@@ -1,0 +1,2 @@
+.detail{padding: 20rpx 40rpx;}
+.detail .cs{line-height: 60rpx; font-size: 30rpx; color: #666;}

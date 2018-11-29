@@ -218,15 +218,7 @@ Page({
 									console.log(res.data)
 									if(res.data.code == 1) {
 										app.globalData.uniqid = res.data.data.unionid;
-										config.get(config.getbaseinfo, {
-											uniqid: res.data.data.unionid
-										}, function(res) {
-											console.log(res.data.data)
-											if (res.data.data.type==5) {
-												wx.setStorageSync('height', parseInt(res.data.data.height));
-											} 
-											that.getWeight();
-										})
+										that.getWeight();
 										that.getAdd();
 										isrequest = 0;
 									}
@@ -393,7 +385,7 @@ Page({
 			age: wx.getStorageSync('age'),
 			sex: wx.getStorageSync('sex'),
 			pagesize: 1,
-			pagenum: 20
+			pagenum: 30
 		}, function(res) {
 			if(res.data.code == 1) {
 				console.log(res.data.data)
@@ -453,7 +445,7 @@ Page({
 							lineData[i].unit='';
 							break;
 						case "protein":
-							lineData[i].unit='%';
+							lineData[i].unit='kda';
 							break;
 						case "bodyage":
 							lineData[i].unit='岁';
@@ -462,7 +454,6 @@ Page({
 							break;
 					}
 				}
-				console.log(lineData)
 				callback()
 			}
 		})
@@ -560,26 +551,5 @@ Page({
 			})
 			this.drawline(this.data.drawData.name)
 		}
-	},
-	addclick:function (e) {
-		console.log(e.currentTarget.dataset.info)
-		var type = e.currentTarget.dataset.info.AdType;
-		if(type==1||type==2){
-			wx.setStorage({
-			  key:"addinfo",
-			  data:e.currentTarget.dataset.info
-			})
-			wx.navigateTo({
-				url: `/pages/add/add`
-			})
-		}else if(type==3){
-			wx.navigateToMiniProgram({
-			  appId: e.currentTarget.dataset.info.ExtContent,
-			  path: e.currentTarget.dataset.info.Content,
-			  success(res) {
-			    // 打开成功
-			  }
-			})
-		} 
 	}
 })

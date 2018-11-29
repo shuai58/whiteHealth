@@ -1,0 +1,16 @@
+.fixbg{ position: fixed; left: 0; top: 0; z-index: 9999; width: 100%; height: 100%;
+display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0);}
+.fixbg .edit{width: 440rpx; padding:30rpx 40rpx; background: #fff; margin: 0 auto; border-radius:20rpx; box-shadow: 0 0 30rpx #999;}
+.fixbg .edform{ width:100%;}
+.fixbg .edform .ts{text-align: center; font-size: 24rpx; color: #999;}
+.fixbg .edform .sex{display: flex; justify-content: center; margin-bottom: 20rpx;}
+.fixbg .edform .sex image{width:100rpx; height: 100rpx; margin: 0 40rpx;}
+.fixbg .editem{position: relative;display: flex; align-items: center; font-size: 28rpx; border-radius:20rpx; margin-top: 30rpx;
+justify-content: space-between; padding:0 30rpx; height: 80rpx; background: #eee;}
+.fixbg .editem .name{width: 100rpx; color: #333;}
+.fixbg .editem .value{position: relative; z-index: 999; width: 300rpx; text-align: center;}
+.fixbg .editem .arrow{position: absolute; right: 30rpx; top: 30rpx; z-index: 0; width: 24rpx; height: 20rpx;}
+.fixbg .edit .p{font-size: 22rpx; color: #999; text-align: center; padding: 30rpx 0;}
+.fixbg .edit .btn{height: 80rpx; line-height: 80rpx; font-size: 36rpx; background: #17aff8; color: #fff; border: none; }
+
+

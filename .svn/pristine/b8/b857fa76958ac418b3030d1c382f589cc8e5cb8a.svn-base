@@ -560,26 +560,5 @@ Page({
 			})
 			this.drawline(this.data.drawData.name)
 		}
-	},
-	addclick:function (e) {
-		console.log(e.currentTarget.dataset.info)
-		var type = e.currentTarget.dataset.info.AdType;
-		if(type==1||type==2){
-			wx.setStorage({
-			  key:"addinfo",
-			  data:e.currentTarget.dataset.info
-			})
-			wx.navigateTo({
-				url: `/pages/add/add`
-			})
-		}else if(type==3){
-			wx.navigateToMiniProgram({
-			  appId: e.currentTarget.dataset.info.ExtContent,
-			  path: e.currentTarget.dataset.info.Content,
-			  success(res) {
-			    // 打开成功
-			  }
-			})
-		} 
 	}
 })

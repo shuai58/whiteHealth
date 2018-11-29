@@ -332,7 +332,7 @@
 		<view class="bannerbox">
 			<swiper class="banner" indicator-dots="false" autoplay="true">
 				<swiper-item wx:for="{{banner}}" wx:key="key">
-					<image src="{{item.ImgUrl}}" data-info="{{item}}" bindtap="addclick" mode="aspectFill"></image>
+					<image src="{{item.ImgUrl}}" mode="aspectFill"></image>
 				</swiper-item>
 			</swiper>
 		</view>

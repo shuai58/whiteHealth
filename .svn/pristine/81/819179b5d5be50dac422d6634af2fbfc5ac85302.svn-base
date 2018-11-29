@@ -1,0 +1,10 @@
+@import "./../../templet/edit/edit.wxss"
+.head-top{width: 100%; background: #1293ef; text-align: center; padding:60rpx 0;}
+.headimg{width: 120rpx; height:120rpx; border-radius:200rpx;}
+
+.head-top .name{font-size: 32rpx; color: #fff; margin: 20rpx auto;}
+
+.kuai{background: #fff; margin-bottom: 16rpx;}
+
+
+

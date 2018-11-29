@@ -1,6 +1,6 @@
 <view class="detail">
 	<view class="cs">测量地点：{{showdata.city==null?'未知':showdata.city}}{{showdata.address==null?'':showdata.address}}</view>
-	<view class="cs">测量时间：{{showdata.createtime +' '+ showdata.mintime}}</view>
+	<view class="cs">测量时间：{{showdata.createtime}}</view>
 </view>	
 <view class="wxlist">
 	<view class="weui-cell">
