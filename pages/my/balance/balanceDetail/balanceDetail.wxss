@@ -1,0 +1,22 @@
+.list .item{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid #eee;
+	padding: 25rpx 50rpx;
+	padding-bottom: 10rpx;
+	
+}
+.left .h2{
+	font-size: 30rpx;
+	font-weight: 600;
+}
+.left .p{
+	font-size: 26rpx;
+	color: #999;	
+	line-height: 50rpx;
+}
+.right{
+	font-size: 36rpx;
+	color: #62cc74;
+}

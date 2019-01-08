@@ -10,10 +10,7 @@
     "pages/movement/movement",
     "pages/my/history/history",
     "pages/my/history/detail/detail",
-    "pages/add/add",
-    "pages/my/balance/balance",
-    "pages/my/balance/balanceDetail/balanceDetail",
-    "pages/redpacket/redpacket"
+    "pages/add/add"
   ],
   "window": {
     "backgroundTextStyle": "light",

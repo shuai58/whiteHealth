@@ -1,0 +1,9 @@
+<view class="tapdetail">
+	<navigator url="/pages/my/balance/balanceDetail/balanceDetail">余额明细</navigator>
+</view>
+<view class="page">
+	<view class="icon"><image src="../../../img/money.png"></image></view>
+	<view class="name">我的余额</view>	
+	<view class="money"><text>￥</text>125.00</view>
+	<view class="btn">提现</view>
+</view>

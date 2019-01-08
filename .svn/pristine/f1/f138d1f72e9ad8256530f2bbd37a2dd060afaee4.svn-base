@@ -1,0 +1,11 @@
+<view class="detail">
+	<view class="list">
+		<view class="item">
+			<view class="left">
+				<view class="h2">微信红包</view>
+				<view class="p">2019-01-03 10:02:03</view>
+			</view>
+			<view class="right">+6.68</view>
+		</view>
+	</view>
+</view>

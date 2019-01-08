@@ -1,0 +1,2 @@
+.title{padding: 30rpx; background: #fff; border-bottom: 1rpx solid #eee; font-weight: 700; font-size: 30rpx; text-align: center;}
+.content{padding:20rpx 30rpx;  font-size: 26rpx;} 

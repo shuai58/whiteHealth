@@ -1,0 +1,73 @@
+<view class="packet">
+	<view class="topbox">
+		<image class="top" src="../../img/hbbg.jpg"></image>
+		<view class="packetinfo">
+			<image class="headimg" src="../../img/hbbg.jpg"></image>
+			<view class="detail"><text>￥</text>8.88</view>
+			<view bindtap="tapbtn" class="btn">立即领取</view>
+		</view>
+		<view class="tishi">领取后红包自动放入余额，可在个人中心查看</view>
+	</view>
+	<view class="packetrank">
+		<view class="rankhead">
+			<image class="img" src="../../img/rank-left.png"></image>
+			<view class="title">看看其他朋友的手气</view>
+			<image class="img" src="../../img/rank-right.png"></image>	
+		</view>
+		<view class="list">
+			<view class="item">
+				<image class="img" src="../../img/hbbg.jpg"></image>
+				<view class="detail">
+					<view class="h2">昵称</view>
+					<view class="p">套路少红包大套路少红包大套路少红包大套路少红包大套路少红包大套路少红包大套路少红包大</view>
+				</view>
+				<view class="money">
+					16.8元
+				</view>
+			</view>
+			<view class="item">
+				<image class="img" src="../../img/hbbg.jpg"></image>
+				<view class="detail">
+					<view class="h2">昵称</view>
+					<view class="p">套路少红包大套路少红包大套路少红包大套路少红包大套路少红包大套路少红包大套路少红包大</view>
+				</view>
+				<view class="money">
+					16.8元
+				</view>
+			</view>
+			<view class="item">
+				<image class="img" src="../../img/hbbg.jpg"></image>
+				<view class="detail">
+					<view class="h2">昵称</view>
+					<view class="p">套路少红包大套路少红包大套路少红包大套路少红包大套路少红包大套路少红包大套路少红包大</view>
+				</view>
+				<view class="money">
+					16.8元
+				</view>
+			</view>
+			<view class="item">
+				<image class="img" src="../../img/hbbg.jpg"></image>
+				<view class="detail">
+					<view class="h2">昵称</view>
+					<view class="p">套路少红包大套路少红包大套路少红包大套路少红包大套路少红包大套路少红包大套路少红包大</view>
+				</view>
+				<view class="money">
+					16.8元
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="rule">
+		<view class="title">
+			<view class="h2">活动规则</view>
+		</view>
+		<view class="ruleitem">
+			<view class="p">1.领取红包自动放入余额，可在个人中心查看并提现；</view>
+			<view class="p">2.排行榜为领取红包的总金额排行；</view>
+		</view>
+	</view>
+	<view class="bottom">
+		<image class="img" src="../../img/logo2.png"></image>
+		<view class="p">温馨提示：本活动最终解释权归小白称所有</view>
+	</view>
+</view>

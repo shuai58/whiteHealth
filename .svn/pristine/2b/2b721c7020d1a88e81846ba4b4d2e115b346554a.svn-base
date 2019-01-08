@@ -14,7 +14,6 @@ var eindex;
 var keyname;
 Page({
 	data: {
-		showpacket:true,
 		isedit: true,
 		ishidden: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 		deviceType: 0,
@@ -492,9 +491,6 @@ Page({
 	},
 	drawline: function(canvasid) {
 		var that = this;
-		that.setData({
-			showpacket: false
-		})
 		if(that.data.type == 0) {
 			var categories = that.data.drawData.clinetime;
 			var series = that.data.drawData.clinevalue;
@@ -547,9 +543,6 @@ Page({
 				lineStyle: 'curve'
 			}
 		});
-		that.setData({
-			showpacket: true
-		})
 	},
 	changvalue: function(e) {
 		var mystep = (mywd - windowWidth) / 100;
@@ -588,10 +581,5 @@ Page({
 			  }
 			})
 		} 
-	},
-	packettap (){
-		wx.navigateTo({
-			url: `/pages/redpacket/redpacket`
-		})
 	}
 })

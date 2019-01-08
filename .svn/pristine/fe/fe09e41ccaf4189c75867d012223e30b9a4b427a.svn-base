@@ -12,8 +12,7 @@
     "pages/my/history/detail/detail",
     "pages/add/add",
     "pages/my/balance/balance",
-    "pages/my/balance/balanceDetail/balanceDetail",
-    "pages/redpacket/redpacket"
+    "pages/my/balance/balanceDetail/balanceDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

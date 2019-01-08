@@ -1,0 +1,40 @@
+.tapdetail{
+	line-height: 80rpx;
+	padding: 0 30rpx;
+	text-align: right;
+	font-size: 30rpx;
+}
+.page{
+	margin-top: 10%;
+	text-align: center;
+	
+}
+.icon image{
+	width: 140rpx;
+	height: 140rpx;
+	margin: 0 auto;
+}
+.name{
+	font-size: 32rpx;
+	color: #333;
+	line-height: 100rpx;
+}
+.money{
+	font-size: 70rpx;
+	font-weight: 700;
+	
+}
+.money text{
+	font-size: 50rpx;
+}
+.btn{
+	width: 260rpx;
+	height: 66rpx;
+	margin: 60rpx auto;
+	line-height: 66rpx;
+	text-align: center;
+	background: #62cc74;
+	border-radius:33rpx;
+	color: #fff;
+	font-size: 30rpx;
+}

@@ -1,5 +1,4 @@
 <import src="./../../templet/line/line.wxml" />
-<cover-image wx:if="{{showpacket}}" bindtap="packettap" class="hbbtn" src="/img/hb.png"></cover-image>
 <view class="container">
 	<view class="head">
 		<image class="headbg" mode="widthFix" src="/img/head-bg.jpg"></image>

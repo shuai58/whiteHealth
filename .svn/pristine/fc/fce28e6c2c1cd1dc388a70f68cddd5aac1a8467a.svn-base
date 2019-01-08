@@ -1,0 +1,6 @@
+<import src="../../wxParse/wxParse.wxml"/> 
+<web-view wx:if="{{isview}}" src="{{url}}"></web-view>
+<view wx:else>
+	<view class="title">{{title}}</view>
+	<view class="content"><template is="wxParse" data="{{wxParseData:about.nodes}}"/></view>
+</view>

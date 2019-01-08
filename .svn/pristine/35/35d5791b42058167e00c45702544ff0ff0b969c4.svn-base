@@ -1,5 +1,4 @@
 <import src="./../../templet/line/line.wxml" />
-<cover-image wx:if="{{showpacket}}" bindtap="packettap" class="hbbtn" src="/img/hb.png"></cover-image>
 <view class="container">
 	<view class="head">
 		<image class="headbg" mode="widthFix" src="/img/head-bg.jpg"></image>
@@ -333,7 +332,7 @@
 		<view class="bannerbox">
 			<swiper class="banner" indicator-dots="false" autoplay="true">
 				<swiper-item wx:for="{{banner}}" wx:key="key">
-					<image src="{{item.ImgUrl}}" data-info="{{item}}" bindtap="addclick"></image>
+					<image src="{{item.ImgUrl}}" data-info="{{item}}" bindtap="addclick" mode="aspectFill"></image>
 				</swiper-item>
 			</swiper>
 		</view>
